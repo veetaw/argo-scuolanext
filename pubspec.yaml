@@ -10,8 +10,14 @@ dependencies:
 
 dev_dependencies:
   intl_translation: ^0.16.6
+  flutter_launcher_icons: ^0.2.1
   flutter_test:
     sdk: flutter
 
 flutter:
   uses-material-design: true
+
+flutter_icons:
+  image_path: assets/icons/launcher_icon.png
+  android: true
+  ios: true
