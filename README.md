@@ -1,4 +1,4 @@
-# registro_elettronico
+# argo_scuolanext
 
 Applicazione non ufficiale per il registro elettronico argo
 

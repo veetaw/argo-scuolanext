@@ -1,4 +1,4 @@
-package com.veetaw.registroelettronico;
+package com.veetaw.argo_scuolanext;
 
 import android.os.Bundle;
 
