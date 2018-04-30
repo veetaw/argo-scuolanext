@@ -1,8 +1,3 @@
-# argo_scuolanext
+# UNOFFICIAL MOBILE APP FOR ARGO SCUOLANEXT
 
-Applicazione non ufficiale per il registro elettronico argo
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+WIP project, for any issues contact me on [telegram](t.me/veetaw) and I'll give you my mail.

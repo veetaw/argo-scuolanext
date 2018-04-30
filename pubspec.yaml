@@ -1,5 +1,5 @@
 name: argo_scuolanext
-description: Applicazione non ufficiale per il registro elettronico argo
+description: unofficial argo's scuolanext application
 
 dependencies:
   flutter:
