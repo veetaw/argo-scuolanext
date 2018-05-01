@@ -2,6 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart' as prefs;
 
 class SharedPreferences {
   String _kFirstTime = "is_first_time";
+  String _kLoggedIn = "is_logged";
 
   static final SharedPreferences instance = new SharedPreferences._();
   prefs.SharedPreferences sharedPreferences;
@@ -13,8 +14,11 @@ class SharedPreferences {
   initPrefs() async =>
       sharedPreferences = await prefs.SharedPreferences.getInstance();
 
-  bool isFirstTime() => sharedPreferences.getBool(_kFirstTime) ?? true;
+  bool get isFirstTime => sharedPreferences.getBool(_kFirstTime) ?? true;
 
-  changeFirstTime() async =>
-      sharedPreferences.setBool(_kFirstTime, !isFirstTime());
+  changeFirstTime() => sharedPreferences.setBool(_kFirstTime, !isFirstTime);
+
+  bool get isLogged => sharedPreferences.getBool(_kLoggedIn);
+
+  setLogged() async => sharedPreferences.setBool(_kLoggedIn, !isLogged);
 }
