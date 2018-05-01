@@ -59,7 +59,15 @@ class Intro extends StatelessWidget {
       children: <Widget>[
         new PageView(
           children: <Widget>[
-            // _buildPage(title: ),
+            _buildPage(
+                title: RELocalizations.of(context).introTitleFirst,
+                subTitle: RELocalizations.of(context).introSubTitleFirst,
+                imageAssetName: "assets/icons/icon_bw.png"),
+            _buildPage(
+                title: RELocalizations.of(context).introTitleSecond,
+                subTitle: RELocalizations.of(context).introSubTitleSecond,
+                imageAssetName: "assets/icons/icon_bw.png" // todo temporary
+                )
           ],
         ),
         new Positioned(
@@ -75,7 +83,7 @@ class Intro extends StatelessWidget {
                     RELocalizations.of(context).introButtonText,
                     style: const TextStyle(fontSize: 16.0),
                   ),
-                  onPressed: () {},
+                  onPressed: () {}, // todo
                 ),
               ),
               new Dots(
