@@ -48,7 +48,6 @@ class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {
   @override
   Future<RELocalizations> load(Locale locale) => RELocalizations.load(locale);
 
-  //todo
   @override
   bool shouldReload(LocalizationsDelegate<RELocalizations> old) => false;
 }

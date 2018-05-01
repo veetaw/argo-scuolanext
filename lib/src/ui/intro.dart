@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../locale/locales.dart';
+import 'login.dart';
 
 PageController controller = new PageController();
 
@@ -10,6 +11,9 @@ class Intro extends StatelessWidget {
   final double _kImageSize = 200.0;
   final double _kTitleSize = 22.0;
   final double _kSubTitleSize = 20.0;
+
+  static String get routeName => "intro";
+
   Widget _buildPage({String title, String subTitle, String imageAssetName}) {
     return new Padding(
       padding: const EdgeInsets.only(bottom: 80.0),
@@ -30,7 +34,6 @@ class Intro extends StatelessWidget {
             child: new Text(
               title,
               maxLines: 2,
-              textAlign: TextAlign.left,
               style: new TextStyle(
                 fontSize: _kTitleSize,
                 fontWeight: FontWeight.w500,
@@ -56,7 +59,6 @@ class Intro extends StatelessWidget {
     );
   }
 
-  // todo
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -91,7 +93,9 @@ class Intro extends StatelessWidget {
                     RELocalizations.of(context).introButtonText.toUpperCase(),
                     style: const TextStyle(fontSize: 18.0),
                   ),
-                  onPressed: () {}, // todo
+                  onPressed: () => Navigator
+                      .of(context)
+                      .pushReplacementNamed(Login.routeName),
                 ),
               ),
               new Dots(

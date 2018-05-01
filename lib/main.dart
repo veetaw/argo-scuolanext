@@ -5,6 +5,7 @@ import 'src/locale/locales.dart';
 import 'src/ui/error_screen.dart';
 import 'src/ui/home.dart';
 import 'src/ui/intro.dart';
+import 'src/ui/login.dart';
 import 'src/ui/splash_screen.dart';
 import 'src/util/shared_preferences.dart';
 
@@ -24,6 +25,11 @@ class App extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
           ],
+          routes: {
+            Intro.routeName: (BuildContext context) => new Intro(),
+            Login.routeName: (BuildContext context) => new Login(),
+            Home.routeName: (BuildContext context) => new Home(),
+          },
           onGenerateTitle: (context) => RELocalizations.of(context).title,
           home: new FutureBuilder(
             future: sharedPreferences.initPrefs(),
