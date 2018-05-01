@@ -18,7 +18,7 @@ class SharedPreferences {
 
   changeFirstTime() => sharedPreferences.setBool(_kFirstTime, !isFirstTime);
 
-  bool get isLogged => sharedPreferences.getBool(_kLoggedIn);
+  bool get isLogged => sharedPreferences.getBool(_kLoggedIn) ?? false;
 
   setLogged() async => sharedPreferences.setBool(_kLoggedIn, !isLogged);
 }
