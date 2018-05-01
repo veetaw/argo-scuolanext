@@ -19,6 +19,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "introButtonText" : MessageLookupByLibrary.simpleMessage("login"),
+    "introSubTitleFirst" : MessageLookupByLibrary.simpleMessage("This is an UNOFFICIAL app"),
+    "introSubTitleSecond" : MessageLookupByLibrary.simpleMessage("Help developer to fix bugs with the report button."),
+    "introTitleFirst" : MessageLookupByLibrary.simpleMessage("Welcome to Argo ScuolaNext"),
+    "introTitleSecond" : MessageLookupByLibrary.simpleMessage("Contribute to the app development"),
     "title" : MessageLookupByLibrary.simpleMessage("RE")
   };
 }

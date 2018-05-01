@@ -1,8 +1,32 @@
 {
-  "@@last_modified": "2018-04-30T17:45:16.944758",
-  "title": "Registro Elettronico",
+  "@@last_modified": "2018-05-01T09:09:55.526019",
+  "title": "Registro elettronico",
   "@title": {
-    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "introButtonText": "login",
+  "@introButtonText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introTitleFirst": "Benvenuto in Argo Scuolanext",
+  "@introTitleFirst": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introSubTitleFirst": "Questa applicazione NON è ufficiale",
+  "@introSubTitleFirst": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introTitleSecond": "Contribuisci allo sviluppo dell'applicazione",
+  "@introTitleSecond": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introSubTitleSecond": "Aiuta lo sviluppatore a risolverne i problemi con il tasto apposito.",
+  "@introSubTitleSecond": {
     "type": "text",
     "placeholders": {}
   }

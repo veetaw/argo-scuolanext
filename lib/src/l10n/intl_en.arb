@@ -1,8 +1,32 @@
 {
-  "@@last_modified": "2018-04-30T17:45:16.944758",
+  "@@last_modified": "2018-05-01T09:22:57.492203",
   "title": "RE",
   "@title": {
-    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "introButtonText": "login",
+  "@introButtonText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introTitleFirst": "Welcome to Argo ScuolaNext",
+  "@introTitleFirst": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introSubTitleFirst": "This is an UNOFFICIAL app",
+  "@introSubTitleFirst": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introTitleSecond": "Contribute to the app development",
+  "@introTitleSecond": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introSubTitleSecond": "Help developer to fix bugs with the report button.",
+  "@introSubTitleSecond": {
     "type": "text",
     "placeholders": {}
   }
