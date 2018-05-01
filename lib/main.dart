@@ -15,25 +15,29 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => new MaterialApp(
-      supportedLocales: RELocalizationsDelegate.supportedLocales
-          .map((String lang) => new Locale(lang)),
-      localizationsDelegates: [
-        new RELocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      onGenerateTitle: (context) => RELocalizations.of(context).title,
-      home: new FutureBuilder(
-        future: sharedPreferences.initPrefs(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.active:
-            case ConnectionState.waiting:
-              return new SplashScreen();
-            default:
-              if (snapshot.hasError) return new ErrorScreen();
-              return sharedPreferences.isFirstTime() ? new Intro() : new Home();
-          }
-        },
-      ));
+          supportedLocales: [
+            const Locale('en', ''),
+            const Locale('it', '')
+          ],
+          localizationsDelegates: [
+            const RELocalizationsDelegate(),
+            GlobalWidgetsLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+          ],
+          onGenerateTitle: (context) => RELocalizations.of(context).title,
+          home: new FutureBuilder(
+            future: sharedPreferences.initPrefs(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.active:
+                case ConnectionState.waiting:
+                  return new SplashScreen();
+                default:
+                  if (snapshot.hasError) return new ErrorScreen();
+                  return sharedPreferences.isFirstTime()
+                      ? new Intro()
+                      : new Home();
+              }
+            },
+          ));
 }
