@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:shared_preferences/shared_preferences.dart' as prefs;
 
 class SharedPreferences {
@@ -18,5 +16,5 @@ class SharedPreferences {
   bool isFirstTime() => sharedPreferences.getBool(_kFirstTime) ?? true;
 
   changeFirstTime() async =>
-      sharedPreferences.setBool(_kFirstTime, !await isFirstTime());
+      sharedPreferences.setBool(_kFirstTime, !isFirstTime());
 }
