@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../locale/locales.dart';
+import '../util/shared_preferences.dart';
 import 'login.dart';
 
 PageController controller = new PageController();
@@ -13,6 +14,11 @@ class Intro extends StatelessWidget {
   final double _kSubTitleSize = 20.0;
 
   static String get routeName => "intro";
+
+  void _changePrefs() {
+    SharedPreferences sharedPreferences = SharedPreferences.instance;
+    sharedPreferences.changeFirstTime();
+  }
 
   Widget _buildPage({String title, String subTitle, String imageAssetName}) {
     return new Padding(
@@ -62,51 +68,55 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Stack(
-      children: <Widget>[
-        new PageView(
-          controller: controller,
-          physics: AlwaysScrollableScrollPhysics(),
-          children: <Widget>[
-            _buildPage(
-                title: RELocalizations.of(context).introTitleFirst,
-                subTitle: RELocalizations.of(context).introSubTitleFirst,
-                imageAssetName: "assets/icons/icon_bw.png"),
-            _buildPage(
-                title: RELocalizations.of(context).introTitleSecond,
-                subTitle: RELocalizations.of(context).introSubTitleSecond,
-                imageAssetName: "assets/icons/icon_bw.png" // todo temporary
-                )
-          ],
-        ),
-        new Positioned(
-          bottom: 16.0,
-          left: 16.0,
-          right: 16.0,
-          child: new Column(
+      body: new Stack(
+        children: <Widget>[
+          new PageView(
+            controller: controller,
+            physics: AlwaysScrollableScrollPhysics(),
             children: <Widget>[
-              new Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: new MaterialButton(
-                  height: 50.0,
-                  child: new Text(
-                    RELocalizations.of(context).introButtonText.toUpperCase(),
-                    style: const TextStyle(fontSize: 18.0),
-                  ),
-                  onPressed: () => Navigator
-                      .of(context)
-                      .pushReplacementNamed(Login.routeName),
-                ),
-              ),
-              new Dots(
-                pageCount: 2,
-                color: Colors.grey.shade500,
-              )
+              _buildPage(
+                  title: RELocalizations.of(context).introTitleFirst,
+                  subTitle: RELocalizations.of(context).introSubTitleFirst,
+                  imageAssetName: "assets/icons/icon_bw.png"),
+              _buildPage(
+                  title: RELocalizations.of(context).introTitleSecond,
+                  subTitle: RELocalizations.of(context).introSubTitleSecond,
+                  imageAssetName: "assets/icons/icon_bw.png" // todo temporary
+                  )
             ],
           ),
-        )
-      ],
-    ));
+          new Positioned(
+            bottom: 16.0,
+            left: 16.0,
+            right: 16.0,
+            child: new Column(
+              children: <Widget>[
+                new Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: new MaterialButton(
+                    height: 50.0,
+                    child: new Text(
+                      RELocalizations.of(context).introButtonText.toUpperCase(),
+                      style: const TextStyle(fontSize: 18.0),
+                    ),
+                    onPressed: () {
+                      _changePrefs();
+                      Navigator
+                          .of(context)
+                          .pushReplacementNamed(Login.routeName);
+                    },
+                  ),
+                ),
+                new Dots(
+                  pageCount: 2,
+                  color: Colors.grey.shade500,
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 
