@@ -7,47 +7,52 @@ import '../locale/locales.dart';
 PageController controller = new PageController();
 
 class Intro extends StatelessWidget {
-  final double _kImageSize = 150.0;
+  final double _kImageSize = 200.0;
   final double _kTitleSize = 22.0;
   final double _kSubTitleSize = 20.0;
   Widget _buildPage({String title, String subTitle, String imageAssetName}) {
-    return new Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        new Expanded(
-          child: new Image(
-            image: new AssetImage(imageAssetName),
-            width: _kImageSize,
-            height: _kImageSize,
-          ),
-        ),
-        new Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-          child: new Text(
-            title,
-            maxLines: 2,
-            textAlign: TextAlign.left,
-            style: new TextStyle(
-              fontSize: _kTitleSize,
-              fontWeight: FontWeight.w500,
-              letterSpacing: -.3,
+    return new Padding(
+      padding: const EdgeInsets.only(bottom: 80.0),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          new Expanded(
+            child: new Image(
+              image: new AssetImage(imageAssetName),
+              width: _kImageSize,
+              height: _kImageSize,
             ),
           ),
-        ),
-        new Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 64.0),
-          child: new Text(
-            subTitle,
-            maxLines: 5,
-            textAlign: TextAlign.center,
-            style: new TextStyle(
-              fontSize: _kSubTitleSize,
-              fontWeight: FontWeight.w300,
+          new Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+            child: new Text(
+              title,
+              maxLines: 2,
+              textAlign: TextAlign.left,
+              style: new TextStyle(
+                fontSize: _kTitleSize,
+                fontWeight: FontWeight.w500,
+                letterSpacing: -.3,
+              ),
             ),
           ),
-        )
-      ],
+          new Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 64.0),
+            child: new Text(
+              subTitle,
+              maxLines: 5,
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                fontSize: _kSubTitleSize,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -58,6 +63,8 @@ class Intro extends StatelessWidget {
         body: new Stack(
       children: <Widget>[
         new PageView(
+          controller: controller,
+          physics: AlwaysScrollableScrollPhysics(),
           children: <Widget>[
             _buildPage(
                 title: RELocalizations.of(context).introTitleFirst,
@@ -79,15 +86,16 @@ class Intro extends StatelessWidget {
               new Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: new MaterialButton(
+                  height: 50.0,
                   child: new Text(
-                    RELocalizations.of(context).introButtonText,
-                    style: const TextStyle(fontSize: 16.0),
+                    RELocalizations.of(context).introButtonText.toUpperCase(),
+                    style: const TextStyle(fontSize: 18.0),
                   ),
                   onPressed: () {}, // todo
                 ),
               ),
               new Dots(
-                pageCount: 3,
+                pageCount: 2,
                 color: Colors.grey.shade500,
               )
             ],
@@ -101,7 +109,8 @@ class Intro extends StatelessWidget {
 class Dots extends AnimatedWidget {
   Dots({this.pageCount, this.color})
       : assert(pageCount != null),
-        assert(Color != null);
+        assert(Color != null),
+        super(listenable: controller);
 
   final int pageCount;
   final Color color;
@@ -124,11 +133,6 @@ class Dots extends AnimatedWidget {
         color: color,
         child: new Container(
           height: _kDotSize + _kDotZoom * anim,
-          child: new InkWell(
-            onTap: () => controller.animateToPage(index + 1,
-                duration: new Duration(milliseconds: 300),
-                curve: Curves.easeOut),
-          ),
         ),
       ),
     );

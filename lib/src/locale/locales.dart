@@ -7,10 +7,11 @@ import '../l10n/messages_all.dart';
 
 class RELocalizations {
   static Future<RELocalizations> load(Locale locale) {
-    String name = Intl.canonicalizedLocale(
-        locale.countryCode.isEmpty ? locale.languageCode : locale.toString());
-    return initializeMessages(name).then((_) {
-      Intl.defaultLocale = name;
+    final String name =
+        locale.countryCode == null ? locale.languageCode : locale.toString();
+    final String localeName = Intl.canonicalizedLocale(name);
+    return initializeMessages(localeName).then((bool _) {
+      Intl.defaultLocale = localeName;
       return new RELocalizations();
     });
   }
