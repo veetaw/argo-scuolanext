@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-05-01T09:22:57.492203",
+  "@@last_modified": "2018-05-02T17:57:36.918819",
   "title": "RE",
   "@title": {
     "type": "text",
@@ -27,6 +27,26 @@
   },
   "introSubTitleSecond": "Help developer to fix bugs with the report button.",
   "@introSubTitleSecond": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Login",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "schoolCode": "School code",
+  "@schoolCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "username": "Username",
+  "@username": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
     "type": "text",
     "placeholders": {}
   }

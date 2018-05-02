@@ -29,5 +29,25 @@
   "@introSubTitleSecond": {
     "type": "text",
     "placeholders": {}
+  },
+  "login": "Accesso",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "schoolCode": "Codice scuola",
+  "@schoolCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "username": "Nome utente",
+  "@username": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
   }
 }

@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "introSubTitleSecond" : MessageLookupByLibrary.simpleMessage("Aiuta lo sviluppatore a risolverne i problemi con il tasto apposito."),
     "introTitleFirst" : MessageLookupByLibrary.simpleMessage("Benvenuto in Argo Scuolanext"),
     "introTitleSecond" : MessageLookupByLibrary.simpleMessage("Contribuisci allo sviluppo dell\'applicazione"),
-    "title" : MessageLookupByLibrary.simpleMessage("Registro elettronico")
+    "login" : MessageLookupByLibrary.simpleMessage("Accesso"),
+    "password" : MessageLookupByLibrary.simpleMessage("Password"),
+    "schoolCode" : MessageLookupByLibrary.simpleMessage("Codice scuola"),
+    "title" : MessageLookupByLibrary.simpleMessage("Registro elettronico"),
+    "username" : MessageLookupByLibrary.simpleMessage("Nome utente")
   };
 }

@@ -22,6 +22,7 @@ class RELocalizations {
   // todo find the best translation for 'Registro Elettronico'
   String get title => Intl.message('RE', name: "title");
 
+  // title
   String get introButtonText => Intl.message('login', name: "introButtonText");
 
   String get introTitleFirst =>
@@ -34,6 +35,12 @@ class RELocalizations {
   String get introSubTitleSecond =>
       Intl.message('Help developer to fix bugs with the report button.',
           name: "introSubTitleSecond");
+
+  // login
+  String get login => Intl.message("Login", name: 'login');
+  String get schoolCode => Intl.message("School code", name: 'schoolCode');
+  String get username => Intl.message("Username", name: 'username');
+  String get password => Intl.message("Password", name: 'password');
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {
