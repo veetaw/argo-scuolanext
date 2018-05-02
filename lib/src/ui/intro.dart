@@ -75,14 +75,15 @@ class Intro extends StatelessWidget {
             physics: AlwaysScrollableScrollPhysics(),
             children: <Widget>[
               _buildPage(
-                  title: RELocalizations.of(context).introTitleFirst,
-                  subTitle: RELocalizations.of(context).introSubTitleFirst,
-                  imageAssetName: "assets/icons/icon_bw.png"),
+                title: RELocalizations.of(context).introTitleFirst,
+                subTitle: RELocalizations.of(context).introSubTitleFirst,
+                imageAssetName: "assets/icons/icon_bw.png",
+              ),
               _buildPage(
-                  title: RELocalizations.of(context).introTitleSecond,
-                  subTitle: RELocalizations.of(context).introSubTitleSecond,
-                  imageAssetName: "assets/icons/icon_bw.png" // todo temporary
-                  )
+                title: RELocalizations.of(context).introTitleSecond,
+                subTitle: RELocalizations.of(context).introSubTitleSecond,
+                imageAssetName: "assets/icons/icon_bw.png", // todo temporary
+              ),
             ],
           ),
           new Positioned(
