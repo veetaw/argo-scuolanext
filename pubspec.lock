@@ -130,6 +130,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_secure_storage:
+    dependency: "direct main"
+    description:
+      name: flutter_secure_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -324,6 +331,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.29.0+1"
+  scuolanext:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: c9bf34121b9e5e07b260e26cc62beb48d42ff69c
+      url: "https://github.com/veetaw/argo-scuolanext-dart.git"
+    source: git
+    version: "1.0.0"
   shared_preferences:
     dependency: "direct main"
     description:

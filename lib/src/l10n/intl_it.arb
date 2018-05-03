@@ -54,5 +54,40 @@
   "@loginFailed": {
     "type": "text",
     "placeholders": {}
+  },
+  "absences": "Assenze",
+  "@absences": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notes": "Note",
+  "@notes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "homeworks": "Compiti",
+  "@homeworks": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reminders": "Promemoria",
+  "@reminders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "votes": "Voti",
+  "@votes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "timetable": "Orario",
+  "@timetable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "teachers": "Insegnanti",
+  "@teachers": {
+    "type": "text",
+    "placeholders": {}
   }
 }

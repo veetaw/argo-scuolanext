@@ -70,6 +70,36 @@ class RELocalizations {
         "Login failed, check your credentials",
         name: "loginFailed",
       );
+
+  // features
+  String get absences => Intl.message(
+        "absences",
+        name: "absences",
+      );
+  String get notes => Intl.message(
+        "notes",
+        name: "notes",
+      );
+  String get homeworks => Intl.message(
+        "homeworks",
+        name: "homeworks",
+      );
+  String get reminders => Intl.message(
+        "reminders",
+        name: "reminders",
+      );
+  String get votes => Intl.message(
+        "votes",
+        name: "votes",
+      );
+  String get timetable => Intl.message(
+        "timetable",
+        name: "timetable",
+      );
+  String get teachers => Intl.message(
+        "teachers",
+        name: "teachers",
+      );
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {

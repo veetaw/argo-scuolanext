@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-05-03T22:22:03.025187",
+  "@@last_modified": "2018-05-03T22:50:20.959856",
   "title": "RE",
   "@title": {
     "type": "text",
@@ -52,6 +52,41 @@
   },
   "loginFailed": "Login failed, check your credentials",
   "@loginFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "absences": "absences",
+  "@absences": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notes": "notes",
+  "@notes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "homeworks": "homeworks",
+  "@homeworks": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reminders": "reminders",
+  "@reminders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "votes": "votes",
+  "@votes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "timetable": "timetable",
+  "@timetable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "teachers": "teachers",
+  "@teachers": {
     "type": "text",
     "placeholders": {}
   }

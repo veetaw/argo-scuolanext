@@ -19,6 +19,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "absences" : MessageLookupByLibrary.simpleMessage("absences"),
+    "homeworks" : MessageLookupByLibrary.simpleMessage("homeworks"),
     "introButtonText" : MessageLookupByLibrary.simpleMessage("login"),
     "introSubTitleFirst" : MessageLookupByLibrary.simpleMessage("This is an UNOFFICIAL app"),
     "introSubTitleSecond" : MessageLookupByLibrary.simpleMessage("Help developer to fix bugs with the report button."),
@@ -26,9 +28,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "introTitleSecond" : MessageLookupByLibrary.simpleMessage("Contribute to the app development"),
     "login" : MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed" : MessageLookupByLibrary.simpleMessage("Login failed, check your credentials"),
+    "notes" : MessageLookupByLibrary.simpleMessage("notes"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
+    "reminders" : MessageLookupByLibrary.simpleMessage("reminders"),
     "schoolCode" : MessageLookupByLibrary.simpleMessage("School code"),
+    "teachers" : MessageLookupByLibrary.simpleMessage("teachers"),
+    "timetable" : MessageLookupByLibrary.simpleMessage("timetable"),
     "title" : MessageLookupByLibrary.simpleMessage("RE"),
-    "username" : MessageLookupByLibrary.simpleMessage("Username")
+    "username" : MessageLookupByLibrary.simpleMessage("Username"),
+    "votes" : MessageLookupByLibrary.simpleMessage("votes")
   };
 }
