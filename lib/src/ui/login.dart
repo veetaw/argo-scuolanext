@@ -1,6 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:scuolanext/scuolanext.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../locale/locales.dart';
+import '../util/shared_preferences.dart';
+import 'home.dart';
 
 final TextEditingController _schoolCodeController = new TextEditingController();
 final TextEditingController _usernameController = new TextEditingController();
@@ -10,22 +16,40 @@ class Login extends StatefulWidget {
   static String get routeName => "login";
 
   @override
-  LoginState createState() {
-    return new LoginState();
-  }
+  LoginState createState() => new LoginState();
 }
 
 class LoginState extends State<Login> {
   bool _obscured = true;
 
-  _verify() async {
+  Future<bool> _login() async {
     String schoolCode = "ss${_schoolCodeController.text}",
         username = _usernameController.text,
         password = _passwordController.text;
 
     if (schoolCode.length < 3 || username.isEmpty || password.isEmpty)
       return false;
-    // todo initialize client
+
+    final Client client = new Client();
+    final FlutterSecureStorage storage = new FlutterSecureStorage();
+    final SharedPreferences prefs = new SharedPreferences();
+
+    try {
+      await client.firstLogin(
+        schoolCode: schoolCode,
+        username: username,
+        password: password,
+      );
+    } on Exception {
+      return false;
+    }
+
+    storage.write(
+      key: 'token',
+      value: client.token,
+    );
+    prefs.setLogged();
+    return true;
   }
 
   // todo fixme: bottom overflows on landscape
@@ -135,7 +159,21 @@ class LoginState extends State<Login> {
               child: new Icon(
                 Icons.arrow_forward_ios,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                bool ok = await _login();
+                if (!ok) {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return new Text(
+                        RELocalizations.of(context).loginFailed,
+                      );
+                    },
+                  );
+                } else {
+                  Navigator.of(context).pushReplacementNamed(Home.routeName);
+                }
+              },
             ),
           ],
         ),
