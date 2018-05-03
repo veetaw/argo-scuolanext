@@ -48,6 +48,12 @@ class LoginState extends State<Login> {
       key: 'token',
       value: client.token,
     );
+
+    storage.write(
+      key: 'school_code',
+      value: client.schoolCode,
+    );
+
     prefs.setLogged();
     return true;
   }
