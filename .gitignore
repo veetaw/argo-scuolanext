@@ -8,6 +8,6 @@ build/
 
 .flutter-plugins
 
-*.lock
+pubspec.lock
 .metadata
 
