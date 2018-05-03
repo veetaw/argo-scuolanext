@@ -39,88 +39,94 @@ class LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: [
-            new Align(
-              child: new Text(
-                RELocalizations.of(context).login,
-                style: const TextStyle(
-                  fontSize: 40.0,
+            new Expanded(
+              flex: 2,
+              child: new Align(
+                child: new Text(
+                  RELocalizations.of(context).login,
+                  style: const TextStyle(
+                    fontSize: 40.0,
+                  ),
                 ),
               ),
             ),
-            new Column(
-              children: <Widget>[
-                new Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: new TextField(
-                    controller: _schoolCodeController,
-                    decoration: new InputDecoration(
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(8.0),
+            new Expanded(
+              flex: 3,
+              child: new Column(
+                children: <Widget>[
+                  new Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new TextField(
+                      controller: _schoolCodeController,
+                      decoration: new InputDecoration(
+                        border: new OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(8.0),
+                          ),
                         ),
-                      ),
-                      labelText: RELocalizations.of(context).schoolCode,
-                      prefixText: 'ss',
-                      prefixIcon: new Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Icon(
-                          Icons.school,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                new Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: new TextField(
-                    controller: _usernameController,
-                    decoration: new InputDecoration(
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(8.0),
-                        ),
-                      ),
-                      labelText: RELocalizations.of(context).username,
-                      prefixIcon: new Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Icon(
-                          Icons.person,
+                        labelText: RELocalizations.of(context).schoolCode,
+                        prefixText: 'ss',
+                        prefixIcon: new Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Icon(
+                            Icons.school,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                new Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: new TextField(
-                    controller: _passwordController,
-                    obscureText: _obscured,
-                    decoration: new InputDecoration(
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(8.0),
+                  new Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new TextField(
+                      controller: _usernameController,
+                      decoration: new InputDecoration(
+                        border: new OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(8.0),
+                          ),
                         ),
-                      ),
-                      labelText: RELocalizations.of(context).password,
-                      prefixIcon: new Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Icon(
-                          Icons.vpn_key,
+                        labelText: RELocalizations.of(context).username,
+                        prefixIcon: new Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Icon(
+                            Icons.person,
+                          ),
                         ),
-                      ),
-                      suffixIcon: new IconButton(
-                        padding: EdgeInsets.zero,
-                        icon: new Icon(
-                          _obscured ? Icons.visibility : Icons.visibility_off,
-                        ),
-                        onPressed: () => setState(
-                              () => _obscured = !_obscured,
-                            ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                  new Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new TextField(
+                      controller: _passwordController,
+                      obscureText: _obscured,
+                      decoration: new InputDecoration(
+                        border: new OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(8.0),
+                          ),
+                        ),
+                        labelText: RELocalizations.of(context).password,
+                        prefixIcon: new Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Icon(
+                            Icons.vpn_key,
+                          ),
+                        ),
+                        suffixIcon: new IconButton(
+                          padding: EdgeInsets.zero,
+                          icon: new Icon(
+                            _obscured ? Icons.visibility : Icons.visibility_off,
+                          ),
+                          onPressed: () => setState(
+                                () => _obscured = !_obscured,
+                              ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             new FloatingActionButton(
               backgroundColor: Colors.white,
