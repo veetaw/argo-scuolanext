@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:scuolanext/scuolanext.dart';
 
+import '../locale/locales.dart';
+
 class Home extends StatefulWidget {
   static String get routeName => "home";
   @override
@@ -23,6 +25,7 @@ class HomeState extends State<Home> {
     super.initState();
   }
 
+  // todo icons..
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -39,6 +42,53 @@ class HomeState extends State<Home> {
                   Icons.person,
                 ),
               ),
+            ),
+            new DrawerElement(
+              icon: Icons.book,
+              text: RELocalizations.of(context).absences,
+              onClick: () {},
+            ),
+            new DrawerElement(
+              icon: Icons.table_chart,
+              text: RELocalizations.of(context).timetable,
+              onClick: () {},
+            ),
+            new DrawerElement(
+              icon: Icons.looks_6,
+              text: RELocalizations.of(context).votes,
+              onClick: () {},
+            ),
+            new DrawerElement(
+              icon: Icons.calendar_today,
+              text: RELocalizations.of(context).homeworks,
+              onClick: () {},
+            ),
+            new Divider(),
+            // todo account
+            new DrawerElement(
+              icon: Icons.info,
+              text: 'info', // todo translation
+              onClick: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return new Text(
+                      "TODO",
+                    );
+                  },
+                );
+              },
+            ),
+            new DrawerElement(
+              icon: Icons.settings,
+              text: 'settings', // todo translation
+              onClick: () {},
+            ),
+            new Divider(),
+            new DrawerElement(
+              icon: Icons.exit_to_app,
+              text: 'exit', // todo translation
+              onClick: () {},
             ),
           ],
         ),
