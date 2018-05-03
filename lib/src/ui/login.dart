@@ -171,8 +171,13 @@ class LoginState extends State<Login> {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return new Text(
-                        RELocalizations.of(context).loginFailed,
+                      return new AlertDialog(
+                        title: new Text(
+                          RELocalizations.of(context).login,
+                        ),
+                        content: new Text(
+                          RELocalizations.of(context).loginFailed,
+                        ),
                       );
                     },
                   );
