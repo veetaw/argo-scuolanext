@@ -6,8 +6,11 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  scuolanext:
+    git: https://github.com/veetaw/argo-scuolanext-dart.git
   cupertino_icons: ^0.1.0
   shared_preferences: ^0.4.1
+  flutter_secure_storage: ^3.0.0
 
 dev_dependencies:
   intl_translation: ^0.16.6
