@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "introTitleFirst" : MessageLookupByLibrary.simpleMessage("Welcome to Argo ScuolaNext"),
     "introTitleSecond" : MessageLookupByLibrary.simpleMessage("Contribute to the app development"),
     "login" : MessageLookupByLibrary.simpleMessage("Login"),
+    "loginFailed" : MessageLookupByLibrary.simpleMessage("Login failed, check your credentials"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "schoolCode" : MessageLookupByLibrary.simpleMessage("School code"),
     "title" : MessageLookupByLibrary.simpleMessage("RE"),

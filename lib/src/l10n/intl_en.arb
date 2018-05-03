@@ -49,5 +49,10 @@
   "@password": {
     "type": "text",
     "placeholders": {}
+  },
+  "loginFailed": "Login failed, check your credentials",
+  "@loginFailed": {
+    "type": "text",
+    "placeholders": {}
   }
 }

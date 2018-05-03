@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-05-02T17:57:36.918819",
+  "@@last_modified": "2018-05-03T22:22:03.025187",
   "title": "RE",
   "@title": {
     "type": "text",
@@ -47,6 +47,11 @@
   },
   "password": "Password",
   "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginFailed": "Login failed, check your credentials",
+  "@loginFailed": {
     "type": "text",
     "placeholders": {}
   }
