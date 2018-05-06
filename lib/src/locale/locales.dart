@@ -20,86 +20,41 @@ class RELocalizations {
       Localizations.of<RELocalizations>(context, RELocalizations);
 
   // todo find the best translation for 'Registro Elettronico'
-  String get title => Intl.message(
-        'RE',
-        name: "title",
-      );
+  String get title => Intl.message('RE', name: "title");
 
   // title
-  String get introButtonText => Intl.message(
-        'login',
-        name: "introButtonText",
-      );
+  String get introButtonText => Intl.message('login', name: "introButtonText");
 
-  String get introTitleFirst => Intl.message(
-        'Welcome to Argo ScuolaNext',
-        name: "introTitleFirst",
-      );
-  String get introSubTitleFirst => Intl.message(
-        'This is an UNOFFICIAL app',
-        name: "introSubTitleFirst",
-      );
+  String get introTitleFirst =>
+      Intl.message('Welcome to Argo ScuolaNext', name: "introTitleFirst");
+  String get introSubTitleFirst =>
+      Intl.message('This is an UNOFFICIAL app', name: "introSubTitleFirst");
 
-  String get introTitleSecond => Intl.message(
-        'Contribute to the app development',
-        name: "introTitleSecond",
-      );
-  String get introSubTitleSecond => Intl.message(
-        'Help developer to fix bugs with the report button.',
-        name: "introSubTitleSecond",
-      );
+  String get introTitleSecond => Intl
+      .message('Contribute to the app development', name: "introTitleSecond");
+  String get introSubTitleSecond =>
+      Intl.message('Help developer to fix bugs with the report button.',
+          name: "introSubTitleSecond");
 
   // login
-  String get login => Intl.message(
-        "Login",
-        name: 'login',
-      );
-  String get schoolCode => Intl.message(
-        "School code",
-        name: 'schoolCode',
-      );
-  String get username => Intl.message(
-        "Username",
-        name: 'username',
-      );
-  String get password => Intl.message(
-        "Password",
-        name: 'password',
-      );
-  String get loginFailed => Intl.message(
-        "Login failed, check your credentials",
-        name: "loginFailed",
-      );
+  String get login => Intl.message("Login", name: 'login');
+  String get schoolCode => Intl.message("School code", name: 'schoolCode');
+  String get username => Intl.message("Username", name: 'username');
+  String get password => Intl.message("Password", name: 'password');
+  String get loginFailed =>
+      Intl.message("Login failed, check your credentials", name: "loginFailed");
 
-  // features
-  String get absences => Intl.message(
-        "absences",
-        name: "absences",
-      );
-  String get notes => Intl.message(
-        "notes",
-        name: "notes",
-      );
-  String get homeworks => Intl.message(
-        "homeworks",
-        name: "homeworks",
-      );
-  String get reminders => Intl.message(
-        "reminders",
-        name: "reminders",
-      );
-  String get votes => Intl.message(
-        "votes",
-        name: "votes",
-      );
-  String get timetable => Intl.message(
-        "timetable",
-        name: "timetable",
-      );
-  String get teachers => Intl.message(
-        "teachers",
-        name: "teachers",
-      );
+  // drawer
+  String get absences => Intl.message("absences", name: "absences");
+  String get notes => Intl.message("notes", name: "notes");
+  String get homeworks => Intl.message("homeworks", name: "homeworks");
+  String get reminders => Intl.message("reminders", name: "reminders");
+  String get votes => Intl.message("votes", name: "votes");
+  String get timetable => Intl.message("timetable", name: "timetable");
+  String get teachers => Intl.message("teachers", name: "teachers");
+  String get info => Intl.message("info", name: "info");
+  String get settings => Intl.message("settings", name: "settings");
+  String get exit => Intl.message("exit", name: "exit");
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {

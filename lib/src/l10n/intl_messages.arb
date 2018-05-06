@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-05-03T22:50:20.959856",
+  "@@last_modified": "2018-05-06T11:51:07.567530",
   "title": "RE",
   "@title": {
     "type": "text",
@@ -87,6 +87,21 @@
   },
   "teachers": "teachers",
   "@teachers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "info": "info",
+  "@info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "settings",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exit": "exit",
+  "@exit": {
     "type": "text",
     "placeholders": {}
   }

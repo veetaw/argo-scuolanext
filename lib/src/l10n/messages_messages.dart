@@ -20,7 +20,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "absences" : MessageLookupByLibrary.simpleMessage("absences"),
+    "exit" : MessageLookupByLibrary.simpleMessage("exit"),
     "homeworks" : MessageLookupByLibrary.simpleMessage("homeworks"),
+    "info" : MessageLookupByLibrary.simpleMessage("info"),
     "introButtonText" : MessageLookupByLibrary.simpleMessage("login"),
     "introSubTitleFirst" : MessageLookupByLibrary.simpleMessage("This is an UNOFFICIAL app"),
     "introSubTitleSecond" : MessageLookupByLibrary.simpleMessage("Help developer to fix bugs with the report button."),
@@ -32,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "reminders" : MessageLookupByLibrary.simpleMessage("reminders"),
     "schoolCode" : MessageLookupByLibrary.simpleMessage("School code"),
+    "settings" : MessageLookupByLibrary.simpleMessage("settings"),
     "teachers" : MessageLookupByLibrary.simpleMessage("teachers"),
     "timetable" : MessageLookupByLibrary.simpleMessage("timetable"),
     "title" : MessageLookupByLibrary.simpleMessage("RE"),

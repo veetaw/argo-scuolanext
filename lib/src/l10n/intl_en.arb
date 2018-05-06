@@ -89,5 +89,20 @@
   "@teachers": {
     "type": "text",
     "placeholders": {}
+  },
+  "info": "info",
+  "@info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "settings",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exit": "exit",
+  "@exit": {
+    "type": "text",
+    "placeholders": {}
   }
 }

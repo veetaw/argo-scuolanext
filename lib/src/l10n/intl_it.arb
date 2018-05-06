@@ -89,5 +89,20 @@
   "@teachers": {
     "type": "text",
     "placeholders": {}
+  },
+  "info": "Info",
+  "@info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Impostazioni",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exit": "Esci",
+  "@exit": {
+    "type": "text",
+    "placeholders": {}
   }
 }
