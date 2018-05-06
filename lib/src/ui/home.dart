@@ -119,7 +119,7 @@ class _Drawer extends StatelessWidget {
           // todo account
           new DrawerTile(
             icon: Icons.info,
-            text: 'info', // todo translation
+            text: RELocalizations.of(context).info,
             onClick: () {
               showDialog(
                 context: context,
@@ -135,13 +135,13 @@ class _Drawer extends StatelessWidget {
           ),
           new DrawerTile(
             icon: Icons.settings,
-            text: 'settings', // todo translation
+            text: RELocalizations.of(context).settings,
             onClick: () {},
           ),
           new Divider(),
           new DrawerTile(
             icon: Icons.exit_to_app,
-            text: 'exit', // todo translation
+            text: RELocalizations.of(context).exit,
             onClick: () {},
           ),
         ],
