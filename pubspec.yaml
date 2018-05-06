@@ -22,6 +22,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/icon_bw.png
+  fonts:
+    # from android oreo
+    - family: GoogleProductSans
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
 
 flutter_icons:
   image_path: assets/icons/launcher_icon.png

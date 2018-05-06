@@ -31,6 +31,12 @@ class App extends StatelessWidget {
           Home.routeName: (BuildContext context) => new Home(),
         },
         onGenerateTitle: (context) => RELocalizations.of(context).title,
+        theme: new ThemeData(
+          fontFamily: 'GoogleProductSans',
+          iconTheme: new IconThemeData(
+            color: Colors.black,
+          ),
+        ),
         home: new FutureBuilder(
           future: sharedPreferences.initPrefs(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
