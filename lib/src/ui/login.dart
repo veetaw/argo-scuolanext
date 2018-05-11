@@ -81,7 +81,7 @@ class LoginState extends State<Login> {
               ),
             ),
             new Expanded(
-              flex: 3,
+              flex: 4,
               child: new Column(
                 children: <Widget>[
                   new Padding(
@@ -158,33 +158,36 @@ class LoginState extends State<Login> {
                 ],
               ),
             ),
-            new FloatingActionButton(
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              elevation: 0.0,
-              child: new Icon(
-                Icons.arrow_forward_ios,
+            new Expanded(
+              flex: 0,
+              child: new FloatingActionButton(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                elevation: 0.0,
+                child: new Icon(
+                  Icons.arrow_forward_ios,
+                ),
+                onPressed: () async {
+                  bool ok = await _login();
+                  if (!ok) {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return new AlertDialog(
+                          title: new Text(
+                            RELocalizations.of(context).login,
+                          ),
+                          content: new Text(
+                            RELocalizations.of(context).loginFailed,
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    Navigator.of(context).pushReplacementNamed(Home.routeName);
+                  }
+                },
               ),
-              onPressed: () async {
-                bool ok = await _login();
-                if (!ok) {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return new AlertDialog(
-                        title: new Text(
-                          RELocalizations.of(context).login,
-                        ),
-                        content: new Text(
-                          RELocalizations.of(context).loginFailed,
-                        ),
-                      );
-                    },
-                  );
-                } else {
-                  Navigator.of(context).pushReplacementNamed(Home.routeName);
-                }
-              },
             ),
           ],
         ),
