@@ -17,8 +17,11 @@ typedef MessageIfAbsent(String message_str, List args);
 class MessageLookup extends MessageLookupByLibrary {
   get localeName => 'en';
 
+  static m0(hour) => "${Intl.plural(hour, one: 'One hour late', two: 'Two hours late', other: 'Absence')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "absence" : m0,
     "absences" : MessageLookupByLibrary.simpleMessage("absences"),
     "exit" : MessageLookupByLibrary.simpleMessage("exit"),
     "homeworks" : MessageLookupByLibrary.simpleMessage("homeworks"),

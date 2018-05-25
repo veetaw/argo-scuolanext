@@ -104,5 +104,12 @@
   "@exit": {
     "type": "text",
     "placeholders": {}
+  },
+  "absence": "{hour,plural, =1{One hour late}=2{Two hours late}other{Absence}}",
+  "@absence": {
+    "type": "text",
+    "placeholders": {
+      "hour": {}
+    }
   }
 }

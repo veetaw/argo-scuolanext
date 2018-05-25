@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2018-05-06T11:51:07.567530",
+  "@@last_modified": "2018-05-11T18:18:39.697612",
   "title": "RE",
   "@title": {
     "type": "text",
@@ -104,5 +104,12 @@
   "@exit": {
     "type": "text",
     "placeholders": {}
+  },
+  "absence": "{hour,plural, =1{One hour late}=2{Two hours late}other{Absence}}",
+  "@absence": {
+    "type": "text",
+    "placeholders": {
+      "hour": {}
+    }
   }
 }

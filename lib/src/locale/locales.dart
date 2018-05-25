@@ -6,10 +6,13 @@ import 'package:intl/intl.dart';
 import '../l10n/messages_all.dart';
 
 class RELocalizations {
+  static String localeCode;
+
   static Future<RELocalizations> load(Locale locale) {
     final String name =
         locale.countryCode == null ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
+    RELocalizations.localeCode = localeName;
     return initializeMessages(localeName).then((bool _) {
       Intl.defaultLocale = localeName;
       return new RELocalizations();
@@ -55,6 +58,16 @@ class RELocalizations {
   String get info => Intl.message("info", name: "info");
   String get settings => Intl.message("settings", name: "settings");
   String get exit => Intl.message("exit", name: "exit");
+
+  // todo translate this better
+  String absence(int hour) => Intl.plural(
+        hour,
+        one: "One hour late",
+        two: "Two hours late",
+        other: "Absence",
+        name: "absence",
+        args: [hour],
+      );
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {

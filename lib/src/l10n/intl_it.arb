@@ -104,5 +104,12 @@
   "@exit": {
     "type": "text",
     "placeholders": {}
+  },
+  "absence": "{hour,plural, =1{Ingresso alla prima ora}=2{Ingresso in seconda ora}other{Assenza}}",
+  "@absence": {
+    "type": "text",
+    "placeholders": {
+      "hour": {}
+    }
   }
 }
