@@ -1,11 +1,11 @@
 {
-  "@@last_modified": "2018-05-11T18:18:39.697612",
+  "@@last_modified": "2018-05-02T17:57:36.918819",
   "title": "RE",
   "@title": {
     "type": "text",
     "placeholders": {}
   },
-  "introButtonText": "login",
+  "introButtonText": "Login",
   "@introButtonText": {
     "type": "text",
     "placeholders": {}
@@ -55,57 +55,57 @@
     "type": "text",
     "placeholders": {}
   },
-  "absences": "absences",
+  "absences": "Absences",
   "@absences": {
     "type": "text",
     "placeholders": {}
   },
-  "notes": "notes",
+  "notes": "Notes",
   "@notes": {
     "type": "text",
     "placeholders": {}
   },
-  "homeworks": "homeworks",
+  "homeworks": "Homeworks",
   "@homeworks": {
     "type": "text",
     "placeholders": {}
   },
-  "reminders": "reminders",
+  "reminders": "Reminders",
   "@reminders": {
     "type": "text",
     "placeholders": {}
   },
-  "votes": "votes",
+  "votes": "Votes",
   "@votes": {
     "type": "text",
     "placeholders": {}
   },
-  "timetable": "timetable",
+  "timetable": "Timetable",
   "@timetable": {
     "type": "text",
     "placeholders": {}
   },
-  "teachers": "teachers",
+  "teachers": "Teachers",
   "@teachers": {
     "type": "text",
     "placeholders": {}
   },
-  "info": "info",
+  "info": "Info",
   "@info": {
     "type": "text",
     "placeholders": {}
   },
-  "settings": "settings",
+  "settings": "Settings",
   "@settings": {
     "type": "text",
     "placeholders": {}
   },
-  "exit": "exit",
+  "exit": "Exit",
   "@exit": {
     "type": "text",
     "placeholders": {}
   },
-  "absence": "{hour,plural, =1{One hour late}=2{Two hours late}other{Absence}}",
+  "absence": "{hour,plural, =1{Joined during the first hour}=2{Joined at the second hour}other{Absence}}",
   "@absence": {
     "type": "text",
     "placeholders": {
