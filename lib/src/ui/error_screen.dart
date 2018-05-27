@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ErrorScreen extends StatelessWidget {
+  final String error;
+
+  ErrorScreen(this.error);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -14,7 +18,7 @@ class ErrorScreen extends StatelessWidget {
               height: 200.0,
               width: 200.0,
             ),
-            new Text("Unknown error."),
+            new Text(error == null ? "Unknown error." : error),
           ],
         ),
       ),
