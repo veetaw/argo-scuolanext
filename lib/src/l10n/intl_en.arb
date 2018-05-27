@@ -111,5 +111,30 @@
     "placeholders": {
       "hour": {}
     }
+  },
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "address": "Address",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "studentID": "ID",
+  "@studentID": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "birthday": "Birthday",
+  "@birthday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noConnectionError": "Enable your mobile connection or connect to a WiFi to use this application",
+  "@noConnectionError": {
+    "type": "text",
+    "placeholders": {}
   }
 }

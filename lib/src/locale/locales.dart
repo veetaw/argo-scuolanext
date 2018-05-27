@@ -68,6 +68,18 @@ class RELocalizations {
         name: "absence",
         args: [hour],
       );
+
+  // profile
+  String get phoneNumber => Intl.message("Phone Number", name: "phoneNumber");
+  String get address => Intl.message("Address", name: "address");
+  String get studentID => Intl.message("ID", name: "studentID");
+  String get birthday => Intl.message("Birthday", name: "birthday");
+
+  // errors
+  String get noConnectionError => Intl.message(
+        "Enable your mobile connection or connect to a WiFi to use this application",
+        name: "noConnectionError",
+      );
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {

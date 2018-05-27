@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:connectivity/connectivity.dart';
 
 import 'src/locale/locales.dart';
 import 'src/ui/error_screen.dart';
@@ -11,8 +12,25 @@ import 'src/util/shared_preferences.dart';
 
 void main() => runApp(new App());
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   final SharedPreferences sharedPreferences = new SharedPreferences();
+
+  @override
+  AppState createState() {
+    return new AppState();
+  }
+}
+
+class AppState extends State<App> {
+  bool _error = false;
+
+  @override
+  void initState() {
+    Connectivity connectivity = new Connectivity();
+    connectivity.checkConnectivity().then((ConnectivityResult c) => setState(
+        () => c == ConnectivityResult.none ? _error = true : _error = false));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) => new MaterialApp(
@@ -38,17 +56,22 @@ class App extends StatelessWidget {
           ),
         ),
         home: new FutureBuilder(
-          future: sharedPreferences.initPrefs(),
+          future: widget.sharedPreferences.initPrefs(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.active:
               case ConnectionState.waiting:
                 return new SplashScreen();
               default:
-                if (snapshot.hasError) return new ErrorScreen();
-                return sharedPreferences.isFirstTime
+                if (_error)
+                  return new ErrorScreen(
+                    RELocalizations.of(context).noConnectionError,
+                  );
+                return widget.sharedPreferences.isFirstTime
                     ? new Intro()
-                    : sharedPreferences.isLogged ? new Home() : new Login();
+                    : widget.sharedPreferences.isLogged
+                        ? new Home()
+                        : new Login();
             }
           },
         ),

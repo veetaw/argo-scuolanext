@@ -111,5 +111,30 @@
     "placeholders": {
       "hour": {}
     }
+  },
+  "phoneNumber": "Numero di cellulare",
+  "@phoneNumber": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "address": "Indirizzo",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "studentID": "Codice Fiscale",
+  "@studentID": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "birthday": "Compleanno",
+  "@birthday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noConnectionError": "Attiva la tua connessione ad internet o connettiti ad una rete WiFi per usare questa applicazione.",
+  "@noConnectionError": {
+    "type": "text",
+    "placeholders": {}
   }
 }
