@@ -6,6 +6,7 @@ import 'package:scuolanext/scuolanext.dart';
 
 import '../locale/locales.dart';
 import 'absences.dart';
+import 'student_profile.dart';
 
 class Home extends StatefulWidget {
   static String get routeName => "home";
@@ -80,24 +81,28 @@ class HomeState extends State<Home> {
                         ),
                       ),
                       accountEmail: null,
-                      currentAccountPicture: new CircleAvatar(
-                        child: new Text(
-                          "${client.student.surname[0]} ${client.student.name[0]}",
-                          style: new TextStyle(
-                            wordSpacing: 2.0,
+                      currentAccountPicture: new InkWell(
+                        child: new CircleAvatar(
+                          child: new Text(
+                            "${client.student.surname[0]} ${client.student.name[0]}",
+                            style: new TextStyle(
+                              wordSpacing: 2.0,
+                            ),
                           ),
                         ),
+                        onTap: () => _changeBody(
+                              StudentProfile(),
+                              context,
+                            ),
                       ),
                     ),
                     new DrawerTile(
                       icon: Icons.book,
                       text: RELocalizations.of(context).absences,
-                      onClick: () {
-                        _changeBody(
-                          new Absences(),
-                          context,
-                        );
-                      },
+                      onClick: () => _changeBody(
+                            new Absences(),
+                            context,
+                          ),
                     ),
                     new DrawerTile(
                       icon: Icons.table_chart,
