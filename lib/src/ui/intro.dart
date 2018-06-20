@@ -6,7 +6,7 @@ import '../locale/locales.dart';
 import '../util/shared_preferences.dart';
 import 'login.dart';
 
-PageController controller = new PageController();
+PageController controller =  PageController();
 
 class Intro extends StatelessWidget {
   final double _kImageSize = 200.0;
@@ -21,40 +21,40 @@ class Intro extends StatelessWidget {
   }
 
   Widget _buildPage({String title, String subTitle, String imageAssetName}) {
-    return new Padding(
-      padding: const EdgeInsets.only(bottom: 80.0),
-      child: new Column(
+    return  Padding(
+      padding:  EdgeInsets.only(bottom: 80.0),
+      child:  Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          new Expanded(
-            child: new Image(
-              image: new AssetImage(imageAssetName),
+           Expanded(
+            child:  Image(
+              image:  AssetImage(imageAssetName),
               width: _kImageSize,
               height: _kImageSize,
             ),
           ),
-          new Padding(
+           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-            child: new Text(
+                 EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+            child:  Text(
               title,
               maxLines: 2,
-              style: new TextStyle(
+              style:  TextStyle(
                 fontSize: _kTitleSize,
                 fontWeight: FontWeight.w500,
                 letterSpacing: -.3,
               ),
             ),
           ),
-          new Padding(
+           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 64.0),
-            child: new Text(
+                 EdgeInsets.symmetric(vertical: 16.0, horizontal: 64.0),
+            child:  Text(
               subTitle,
               maxLines: 5,
               textAlign: TextAlign.center,
-              style: new TextStyle(
+              style:  TextStyle(
                 fontSize: _kSubTitleSize,
                 fontWeight: FontWeight.w300,
               ),
@@ -67,10 +67,10 @@ class Intro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Stack(
+    return  Scaffold(
+      body:  Stack(
         children: <Widget>[
-          new PageView(
+           PageView(
             controller: controller,
             physics: AlwaysScrollableScrollPhysics(),
             children: <Widget>[
@@ -86,19 +86,19 @@ class Intro extends StatelessWidget {
               ),
             ],
           ),
-          new Positioned(
+           Positioned(
             bottom: 16.0,
             left: 16.0,
             right: 16.0,
-            child: new Column(
+            child:  Column(
               children: <Widget>[
-                new Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: new MaterialButton(
+                 Padding(
+                  padding:  EdgeInsets.all(8.0),
+                  child:  MaterialButton(
                     height: 50.0,
-                    child: new Text(
+                    child:  Text(
                       RELocalizations.of(context).introButtonText.toUpperCase(),
-                      style: const TextStyle(fontSize: 18.0),
+                      style:  TextStyle(fontSize: 18.0),
                     ),
                     onPressed: () {
                       _changePrefs();
@@ -108,7 +108,7 @@ class Intro extends StatelessWidget {
                     },
                   ),
                 ),
-                new Dots(
+                 Dots(
                   pageCount: 2,
                   color: Colors.grey.shade500,
                 )
@@ -130,9 +130,9 @@ class Dots extends AnimatedWidget {
   final int pageCount;
   final Color color;
 
-  static const double _kDotSize = 4.0;
-  static const double _kSpacing = 16.0;
-  static const double _kDotZoom = 4.0;
+  static  double _kDotSize = 4.0;
+  static  double _kSpacing = 16.0;
+  static  double _kDotZoom = 4.0;
 
   Widget _buildDot(int index) {
     double anim = Curves.ease.transform(
@@ -141,12 +141,12 @@ class Dots extends AnimatedWidget {
         1.0 - ((controller.page ?? controller.initialPage) - index).abs(),
       ),
     );
-    return new Container(
+    return  Container(
       width: _kSpacing,
-      child: new Material(
+      child:  Material(
         type: MaterialType.circle,
         color: color,
-        child: new Container(
+        child:  Container(
           height: _kDotSize + _kDotZoom * anim,
         ),
       ),
@@ -155,9 +155,9 @@ class Dots extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: new List<Widget>.generate(pageCount, _buildDot),
+      children:  List<Widget>.generate(pageCount, _buildDot),
     );
   }
 }

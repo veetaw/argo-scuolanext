@@ -7,18 +7,18 @@ class ErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Center(
-        child: new Column(
+    return  Scaffold(
+      body:  Center(
+        child:  Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            new Image(
-              image: new AssetImage("assets/icons/icon_bw.png"),
+             Image(
+              image:  AssetImage("assets/icons/icon_bw.png"),
               height: 200.0,
               width: 200.0,
             ),
-            new Text(error == null ? "Unknown error." : error),
+             Text(error == null ? "Unknown error." : error),
           ],
         ),
       ),

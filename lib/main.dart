@@ -10,14 +10,14 @@ import 'src/ui/login.dart';
 import 'src/ui/splash_screen.dart';
 import 'src/util/shared_preferences.dart';
 
-void main() => runApp(new App());
+void main() => runApp( App());
 
 class App extends StatefulWidget {
-  final SharedPreferences sharedPreferences = new SharedPreferences();
+  final SharedPreferences sharedPreferences =  SharedPreferences();
 
   @override
   AppState createState() {
-    return new AppState();
+    return  AppState();
   }
 }
 
@@ -26,52 +26,52 @@ class AppState extends State<App> {
 
   @override
   void initState() {
-    Connectivity connectivity = new Connectivity();
+    Connectivity connectivity =  Connectivity();
     connectivity.checkConnectivity().then((ConnectivityResult c) => setState(
         () => c == ConnectivityResult.none ? _error = true : _error = false));
     super.initState();
   }
 
   @override
-  Widget build(BuildContext context) => new MaterialApp(
+  Widget build(BuildContext context) =>  MaterialApp(
         supportedLocales: [
-          const Locale('en', ''),
-          const Locale('it', ''),
+           Locale('en', ''),
+           Locale('it', ''),
         ],
         localizationsDelegates: [
-          const RELocalizationsDelegate(),
+           RELocalizationsDelegate(),
           GlobalWidgetsLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
         ],
         routes: {
-          Intro.routeName: (BuildContext context) => new Intro(),
-          Login.routeName: (BuildContext context) => new Login(),
-          Home.routeName: (BuildContext context) => new Home(),
+          Intro.routeName: (BuildContext context) =>  Intro(),
+          Login.routeName: (BuildContext context) =>  Login(),
+          Home.routeName: (BuildContext context) =>  Home(),
         },
         onGenerateTitle: (context) => RELocalizations.of(context).title,
-        theme: new ThemeData(
+        theme:  ThemeData(
           fontFamily: 'GoogleProductSans',
-          iconTheme: new IconThemeData(
+          iconTheme:  IconThemeData(
             color: Colors.black,
           ),
         ),
-        home: new FutureBuilder(
+        home:  FutureBuilder(
           future: widget.sharedPreferences.initPrefs(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.active:
               case ConnectionState.waiting:
-                return new SplashScreen();
+                return  SplashScreen();
               default:
                 if (_error)
-                  return new ErrorScreen(
+                  return  ErrorScreen(
                     RELocalizations.of(context).noConnectionError,
                   );
                 return widget.sharedPreferences.isFirstTime
-                    ? new Intro()
+                    ?  Intro()
                     : widget.sharedPreferences.isLogged
-                        ? new Home()
-                        : new Login();
+                        ?  Home()
+                        :  Login();
             }
           },
         ),

@@ -4,7 +4,7 @@ class SharedPreferences {
   String _kFirstTime = "is_first_time";
   String _kLoggedIn = "is_logged";
 
-  static final SharedPreferences instance = new SharedPreferences._();
+  static final SharedPreferences instance =  SharedPreferences._();
   prefs.SharedPreferences sharedPreferences;
 
   factory SharedPreferences() => instance;

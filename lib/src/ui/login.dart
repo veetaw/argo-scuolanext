@@ -8,15 +8,15 @@ import '../locale/locales.dart';
 import '../util/shared_preferences.dart';
 import 'home.dart';
 
-final TextEditingController _schoolCodeController = new TextEditingController();
-final TextEditingController _usernameController = new TextEditingController();
-final TextEditingController _passwordController = new TextEditingController();
+final TextEditingController _schoolCodeController =  TextEditingController();
+final TextEditingController _usernameController =  TextEditingController();
+final TextEditingController _passwordController =  TextEditingController();
 
 class Login extends StatefulWidget {
   static String get routeName => "login";
 
   @override
-  LoginState createState() => new LoginState();
+  LoginState createState() =>  LoginState();
 }
 
 class LoginState extends State<Login> {
@@ -30,9 +30,9 @@ class LoginState extends State<Login> {
     if (schoolCode.length < 3 || username.isEmpty || password.isEmpty)
       return false;
 
-    final Client client = new Client();
-    final FlutterSecureStorage storage = new FlutterSecureStorage();
-    final SharedPreferences prefs = new SharedPreferences();
+    final Client client =  Client();
+    final FlutterSecureStorage storage =  FlutterSecureStorage();
+    final SharedPreferences prefs =  SharedPreferences();
 
     try {
       await client.firstLogin(
@@ -62,90 +62,90 @@ class LoginState extends State<Login> {
   // probably it overflows on devices with a small screen
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Container(
-        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
-        child: new Column(
+    return  Scaffold(
+      body:  Container(
+        padding:  EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: [
-            new Expanded(
+             Expanded(
               flex: 2,
-              child: new Align(
-                child: new Text(
+              child:  Align(
+                child:  Text(
                   RELocalizations.of(context).login,
-                  style: const TextStyle(
+                  style:  TextStyle(
                     fontSize: 40.0,
                   ),
                 ),
               ),
             ),
-            new Expanded(
+             Expanded(
               flex: 4,
-              child: new Column(
+              child:  Column(
                 children: <Widget>[
-                  new Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: new TextField(
+                   Padding(
+                    padding:  EdgeInsets.all(8.0),
+                    child:  TextField(
                       controller: _schoolCodeController,
-                      decoration: new InputDecoration(
-                        border: new OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                            const Radius.circular(8.0),
+                      decoration:  InputDecoration(
+                        border:  OutlineInputBorder(
+                          borderRadius:  BorderRadius.all(
+                             Radius.circular(8.0),
                           ),
                         ),
                         labelText: RELocalizations.of(context).schoolCode,
                         prefixText: 'ss',
-                        prefixIcon: new Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: new Icon(
+                        prefixIcon:  Padding(
+                          padding:  EdgeInsets.all(8.0),
+                          child:  Icon(
                             Icons.school,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  new Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: new TextField(
+                   Padding(
+                    padding:  EdgeInsets.all(8.0),
+                    child:  TextField(
                       controller: _usernameController,
-                      decoration: new InputDecoration(
-                        border: new OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                            const Radius.circular(8.0),
+                      decoration:  InputDecoration(
+                        border:  OutlineInputBorder(
+                          borderRadius:  BorderRadius.all(
+                             Radius.circular(8.0),
                           ),
                         ),
                         labelText: RELocalizations.of(context).username,
-                        prefixIcon: new Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: new Icon(
+                        prefixIcon:  Padding(
+                          padding:  EdgeInsets.all(8.0),
+                          child:  Icon(
                             Icons.person,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  new Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: new TextField(
+                   Padding(
+                    padding:  EdgeInsets.all(8.0),
+                    child:  TextField(
                       controller: _passwordController,
                       obscureText: _obscured,
-                      decoration: new InputDecoration(
-                        border: new OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                            const Radius.circular(8.0),
+                      decoration:  InputDecoration(
+                        border:  OutlineInputBorder(
+                          borderRadius:  BorderRadius.all(
+                             Radius.circular(8.0),
                           ),
                         ),
                         labelText: RELocalizations.of(context).password,
-                        prefixIcon: new Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: new Icon(
+                        prefixIcon:  Padding(
+                          padding:  EdgeInsets.all(8.0),
+                          child:  Icon(
                             Icons.vpn_key,
                           ),
                         ),
-                        suffixIcon: new IconButton(
+                        suffixIcon:  IconButton(
                           padding: EdgeInsets.zero,
-                          icon: new Icon(
+                          icon:  Icon(
                             _obscured ? Icons.visibility : Icons.visibility_off,
                           ),
                           onPressed: () => setState(
@@ -158,13 +158,13 @@ class LoginState extends State<Login> {
                 ],
               ),
             ),
-            new Expanded(
+             Expanded(
               flex: 0,
-              child: new FloatingActionButton(
+              child:  FloatingActionButton(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
                 elevation: 0.0,
-                child: new Icon(
+                child:  Icon(
                   Icons.arrow_forward_ios,
                 ),
                 onPressed: () async {
@@ -173,11 +173,11 @@ class LoginState extends State<Login> {
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
-                        return new AlertDialog(
-                          title: new Text(
+                        return  AlertDialog(
+                          title:  Text(
                             RELocalizations.of(context).login,
                           ),
-                          content: new Text(
+                          content:  Text(
                             RELocalizations.of(context).loginFailed,
                           ),
                         );

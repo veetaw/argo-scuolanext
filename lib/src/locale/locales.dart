@@ -15,7 +15,7 @@ class RELocalizations {
     RELocalizations.localeCode = localeName;
     return initializeMessages(localeName).then((bool _) {
       Intl.defaultLocale = localeName;
-      return new RELocalizations();
+      return  RELocalizations();
     });
   }
 
@@ -83,9 +83,9 @@ class RELocalizations {
 }
 
 class RELocalizationsDelegate extends LocalizationsDelegate<RELocalizations> {
-  static const List<String> supportedLocales = ['en', 'it'];
+  static  List<String> supportedLocales = ['en', 'it'];
 
-  const RELocalizationsDelegate();
+   RELocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) =>

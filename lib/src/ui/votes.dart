@@ -21,33 +21,33 @@ class Vote extends StatelessWidget {
     return Container(
       height: 150.0,
       width: double.infinity,
-      child: new Card(
+      child:  Card(
         elevation: 2.0,
-        child: new Row(
+        child:  Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            new Column(
+             Column(
               children: <Widget>[
-                new Text(
+                 Text(
                   subject.name,
                   maxLines: 1,
-                  style: new TextStyle(
+                  style:  TextStyle(
                     letterSpacing: .3,
                     fontSize: 22.0,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                new Text(
+                 Text(
                   subject.teacher,
                   maxLines: 1,
-                  style: new TextStyle(
+                  style:  TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
               ],
             ),
-            new _CircleAverageVote(),
+             _CircleAverageVote(),
           ],
         ),
       ),

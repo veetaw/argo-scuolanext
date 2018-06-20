@@ -4,30 +4,30 @@ import 'package:scuolanext/scuolanext.dart';
 import '../locale/locales.dart';
 
 // TODO BETTER DESIGN
-final Client client = new Client();
+final Client client =  Client();
 
 class StudentProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        new _Header(),
-        new _Element(
+         _Header(),
+         _Element(
           RELocalizations.of(context).phoneNumber,
           client.student.phoneNumber,
         ),
-        new Divider(),
-        new _Element(
+         Divider(),
+         _Element(
           RELocalizations.of(context).studentID,
           client.student.cf,
         ),
-        new Divider(),
-        new _Element(
+         Divider(),
+         _Element(
           RELocalizations.of(context).address,
           "${client.student.address}, ${client.student.zipCode}",
         ),
-        new Divider(),
-        new _Element(
+         Divider(),
+         _Element(
           RELocalizations.of(context).birthday,
           client.student.birth
               .toString()
@@ -46,19 +46,19 @@ class _Element extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      margin: const EdgeInsets.all(8.0),
-      child: new Column(
+    return  Container(
+      margin:  EdgeInsets.all(8.0),
+      child:  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Text(
+           Text(
             title,
             style: TextStyle(color: Colors.black54, fontSize: 16.0),
           ),
-          new Padding(
-            padding: const EdgeInsets.all(4.0),
+           Padding(
+            padding:  EdgeInsets.all(4.0),
           ),
-          new Text(
+           Text(
             content,
             style: TextStyle(fontSize: 20.0),
           )
@@ -71,9 +71,9 @@ class _Element extends StatelessWidget {
 class _Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      margin: const EdgeInsets.only(bottom: 16.0),
-      padding: const EdgeInsets.all(16.0),
+    return  Container(
+      margin:  EdgeInsets.only(bottom: 16.0),
+      padding:  EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -88,8 +88,8 @@ class _Header extends StatelessWidget {
           ],
         ),
       ),
-      child: new Container(
-        child: new Text(
+      child:  Container(
+        child:  Text(
           "${client.student.surname} ${client.student.name}",
           style: TextStyle(
             color: Colors.white,

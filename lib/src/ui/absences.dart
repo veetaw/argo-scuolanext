@@ -9,35 +9,35 @@ import '../locale/locales.dart';
 List<Absence> absences;
 
 class Absences extends StatelessWidget {
-  final Client client = new Client();
+  final Client client =  Client();
 
   @override
   Widget build(BuildContext context) {
-    return new FutureBuilder(
+    return  FutureBuilder(
       future: client.absences(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
             absences = snapshot.data;
-            return new Container(
-              child: new ListView.builder(
-                padding: const EdgeInsets.all(8.0),
+            return  Container(
+              child:  ListView.builder(
+                padding:  EdgeInsets.all(8.0),
                 itemCount: absences.length,
                 itemBuilder: (BuildContext context, int i) {
-                  return new ListTile(
-                    title: new Text(
+                  return  ListTile(
+                    title:  Text(
                       RELocalizations.of(context).absence(
                             absences[i].joinedLessonAt == null
                                 ? 0
                                 : absences[i].joinedLessonAt,
                           ),
                     ),
-                    subtitle: new Text(absences[i].registeredBy),
-                    leading: new LeadingWidget(i),
-                    trailing: new Material(
+                    subtitle:  Text(absences[i].registeredBy),
+                    leading:  LeadingWidget(i),
+                    trailing:  Material(
                       type: MaterialType.circle,
                       color: absences[i].justified ? Colors.green : Colors.red,
-                      child: new Container(
+                      child:  Container(
                         width: 10.0,
                         height: 10.0,
                       ),
@@ -47,8 +47,8 @@ class Absences extends StatelessWidget {
               ),
             );
           default:
-            return new Center(
-              child: new CircularProgressIndicator(),
+            return  Center(
+              child:  CircularProgressIndicator(),
             );
         }
       },
@@ -63,34 +63,34 @@ class LeadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new FutureBuilder(
+    return  FutureBuilder(
       future: initializeDateFormatting(
         RELocalizations.localeCode,
         null,
       ),
       builder: (BuildContext tileContext, AsyncSnapshot tileSnapshot) {
         if (tileSnapshot.connectionState != ConnectionState.done)
-          return new Center(
-            child: new CircularProgressIndicator(),
+          return  Center(
+            child:  CircularProgressIndicator(),
           );
 
-        return new Column(
+        return  Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            new Text(
+             Text(
               absences[i].date.day.toString(),
-              style: new TextStyle(
+              style:  TextStyle(
                 fontSize: 36.0,
                 color: Theme.of(context).primaryColorDark,
                 fontWeight: FontWeight.w500,
                 letterSpacing: -.1,
               ),
             ),
-            new Text(
-              new DateFormat.MMMM().format(absences[i].date),
+             Text(
+               DateFormat.MMMM().format(absences[i].date),
               maxLines: 1,
-              style: new TextStyle(
+              style:  TextStyle(
                 fontSize: 10.0,
                 color: Theme.of(context).primaryColorDark,
                 fontWeight: FontWeight.w300,

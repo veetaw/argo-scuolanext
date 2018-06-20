@@ -11,12 +11,12 @@ import 'student_profile.dart';
 class Home extends StatefulWidget {
   static String get routeName => "home";
   @override
-  HomeState createState() => new HomeState();
+  HomeState createState() =>  HomeState();
 }
 
 class HomeState extends State<Home> {
-  final Client client = new Client();
-  final FlutterSecureStorage storage = new FlutterSecureStorage();
+  final Client client =  Client();
+  final FlutterSecureStorage storage =  FlutterSecureStorage();
 
   Widget currentBody;
 
@@ -45,47 +45,47 @@ class HomeState extends State<Home> {
   // todo icons..
   @override
   Widget build(BuildContext context) {
-    return new FutureBuilder(
+    return  FutureBuilder(
       future: _checkSession(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.active:
           case ConnectionState.waiting:
-            return new Scaffold(
-              body: new Center(
-                child: new CircularProgressIndicator(),
+            return  Scaffold(
+              body:  Center(
+                child:  CircularProgressIndicator(),
               ),
             );
           default:
-            return new Scaffold(
-              appBar: new AppBar(
+            return  Scaffold(
+              appBar:  AppBar(
                 backgroundColor: Colors.white,
                 centerTitle: true,
                 elevation: .5,
                 textTheme: Theme.of(context).textTheme,
                 iconTheme: Theme.of(context).iconTheme,
-                title: new Text(
+                title:  Text(
                   RELocalizations.of(context).title,
                 ),
               ),
-              drawer: new Drawer(
-                child: new ListView(
-                  padding: const EdgeInsets.all(0.0),
+              drawer:  Drawer(
+                child:  ListView(
+                  padding:  EdgeInsets.all(0.0),
                   children: <Widget>[
-                    new UserAccountsDrawerHeader(
-                      accountName: new Text(
+                     UserAccountsDrawerHeader(
+                      accountName:  Text(
                         "${client.student.surname} ${client.student.name}",
-                        style: new TextStyle(
+                        style:  TextStyle(
                           fontWeight: FontWeight.w500,
                           letterSpacing: .2,
                         ),
                       ),
                       accountEmail: null,
-                      currentAccountPicture: new InkWell(
-                        child: new CircleAvatar(
-                          child: new Text(
+                      currentAccountPicture:  InkWell(
+                        child:  CircleAvatar(
+                          child:  Text(
                             "${client.student.surname[0]} ${client.student.name[0]}",
-                            style: new TextStyle(
+                            style:  TextStyle(
                               wordSpacing: 2.0,
                             ),
                           ),
@@ -96,40 +96,40 @@ class HomeState extends State<Home> {
                             ),
                       ),
                     ),
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.book,
                       text: RELocalizations.of(context).absences,
                       onClick: () => _changeBody(
-                            new Absences(),
+                             Absences(),
                             context,
                           ),
                     ),
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.table_chart,
                       text: RELocalizations.of(context).timetable,
                       onClick: () {},
                     ),
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.looks_6,
                       text: RELocalizations.of(context).votes,
                       onClick: () {},
                     ),
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.calendar_today,
                       text: RELocalizations.of(context).homeworks,
                       onClick: () {},
                     ),
-                    new Divider(),
+                     Divider(),
                     // todo account
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.info,
                       text: RELocalizations.of(context).info,
                       onClick: () {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return new AlertDialog(
-                              title: new Text(
+                            return  AlertDialog(
+                              title:  Text(
                                 "TODO",
                               ),
                             );
@@ -137,13 +137,13 @@ class HomeState extends State<Home> {
                         );
                       },
                     ),
-                    new DrawerTile(
+                     DrawerTile(
                       icon: Icons.settings,
                       text: RELocalizations.of(context).settings,
                       onClick: () {},
                     ),
-                    new Divider(),
-                    new DrawerTile(
+                     Divider(),
+                     DrawerTile(
                       icon: Icons.exit_to_app,
                       text: RELocalizations.of(context).exit,
                       onClick: () {},
@@ -172,11 +172,11 @@ class DrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListTile(
-      leading: new Icon(icon),
-      title: new Text(
+    return  ListTile(
+      leading:  Icon(icon),
+      title:  Text(
         text,
-        style: new TextStyle(
+        style:  TextStyle(
           fontWeight: FontWeight.w500,
           letterSpacing: .2,
         ),
